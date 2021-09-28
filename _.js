@@ -19,6 +19,10 @@ const _ = {
     return isInRange;
   },
 
+  words(string) {
+    return string.split(' ');
+  }
+
 };
 
 
