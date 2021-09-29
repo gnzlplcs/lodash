@@ -61,9 +61,19 @@ const _ = {
     return newObj;
   },
 
+  findKey(object, predicate) {
+    for (const key in object) {
+      let value = object[key];
+      let predicateReturnValue = predicate(value);
+      if (predicateReturnValue) {
+        return key;
+      }
+    }
+    return undefined;
+  }
+  
 }
 
-console.log(_.invert({ name: 'Gonzalo', lastName: 'Palacios'}))
 
 // Do not write or modify code below this line.
 module.exports = _;
