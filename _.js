@@ -51,8 +51,19 @@ const _ = {
   has(obj, key) {
     return obj[key] !== undefined ? true : false;
   },
-  
+
+  invert(obj){
+    let newObj = {};
+    for (const key in obj) {
+      let originalValue = obj[key];
+      newObj[originalValue] = key;
+    }
+    return newObj;
+  },
+
 }
+
+console.log(_.invert({ name: 'Gonzalo', lastName: 'Palacios'}))
 
 // Do not write or modify code below this line.
 module.exports = _;
