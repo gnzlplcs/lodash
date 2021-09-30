@@ -73,13 +73,20 @@ const _ = {
   },
 
   drop(array, n) {
-    if (n == undefined) {
+    if (n === undefined) {
       n = 1;
     }
     let droppedArray = array.slice(n);
     return droppedArray;
   },
-  
+
+  dropWhile(array, predicate) {
+    let dropNumber = array.findIndex(function(element, index){
+      return !predicate(element, index, array);
+    });
+    let droppedArray = this.drop(array, dropNumber);
+    return droppedArray;
+  }
 
 }
 
